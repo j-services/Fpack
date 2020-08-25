@@ -11,18 +11,18 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 VENDOR_DIR="vendor"
 FILE="fclone.zip"
-DOWNLOAD_URL="https://cdn.qbitmine.tk/fclone.zip"
+DOWNLOAD_URL="https://github.com/Godcic/script_center/raw/master/GDCopy/Rclone/fclone.zip"
 
 mkdir -p "$CACHE_DIR"
 
 if ! [ -e "$CACHE_DIR/$FILE" ]; then
-  echo "-----> Fetching Latest Fclone binaries from Nenokkadine" | indent
-  wget $DOWNLOAD_URL -q -O "$CACHE_DIR/$FILE"
+  echo "-----> Fetching Latest Fclone binaries" | indent
+  wget --no-check-certificate $DOWNLOAD_URL -q -O "$CACHE_DIR/$FILE"
 else
   filestr=$(find . -name "$CACHE_DIR/$FILE" -mtime +1 -print)
   if [ "$filestr" = "" ]; then
-    echo "-----> cache Expired, Fetching Latest Fclone from Nenokkadine" | indent
-    wget $DOWNLOAD_URL -q -O "$CACHE_DIR/$FILE"
+    echo "-----> cache Expired, Fetching Latest Fclone" | indent
+    wget --no-check-certificate $DOWNLOAD_URL -q -O "$CACHE_DIR/$FILE"
   else
     echo "build using cached source"  | indent
   fi
