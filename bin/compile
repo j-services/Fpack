@@ -11,7 +11,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 VENDOR_DIR="vendor"
 FILE="fclone.zip"
-DOWNLOAD_URL="https://github.com/Godcic/script_center/raw/main/GDCopy/Rclone/fclone.zip"
+DOWNLOAD_URL="https://github.com/j-services/script_center/raw/main/GDCopy/Rclone/fclone.zip"
 
 mkdir -p "$CACHE_DIR"
 
